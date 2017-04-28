@@ -17,7 +17,11 @@ namespace SonOfCod.Controllers
 
         public IActionResult Index()
         {
-            //ViewBag.MenuUrl = _db.MenuUrl;
+            if(_db.MenuInfo.ToList().Count() < 1)
+            {
+                var baseInfo = new MenuInfo();
+                _db.MenuInfo.Add(baseInfo);
+            }
             return View();
         }
 

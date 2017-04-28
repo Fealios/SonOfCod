@@ -16,9 +16,12 @@
     <input type="submit" value="Register" />
 }
 
-<ul>
-    @foreach(var mailUser in ViewBag.MailList)
-    {
-        <li>mailUser.Email</li>
-    }
-</ul>
+@if (User.Identity.IsAuthenticated)
+{
+    <ul>
+        @foreach(var mailUser in ViewBag.MailList)
+        {
+            <li>mailUser.Email</li>
+        }
+    </ul>
+}
