@@ -1,11 +1,22 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @using SonOfCod.ViewModels
 
 @model RegisterViewModel
 
-@using (Html.BeginForm("RegisterUser", "Home", FormMethod.Post))
+<h1> Admin </h1>
+
+<ul>
+    @foreach(var user in ViewBag.UserList)
+    {
+        <li>@user.UserName</li>
+    }
+</ul>
+
+Add a user!
+@using (Html.BeginForm("Register", "Home", FormMethod.Post))
 {
     @Html.LabelFor(m => m.UserName)
     @Html.TextBoxFor(m => m.UserName)

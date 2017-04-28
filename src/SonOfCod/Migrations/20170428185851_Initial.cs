@@ -38,6 +38,19 @@ namespace SonOfCod.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MenuInfo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Url = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MenuInfo", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetUsers",
                 columns: table => new
                 {
@@ -206,6 +219,9 @@ namespace SonOfCod.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "MenuInfo");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

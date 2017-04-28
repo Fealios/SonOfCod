@@ -8,8 +8,8 @@ using SonOfCod.Models;
 namespace SonOfCod.Migrations
 {
     [DbContext(typeof(SonOfCodDbContext))]
-    [Migration("20170428162506_ModelChange")]
-    partial class ModelChange
+    [Migration("20170428185851_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,6 +122,18 @@ namespace SonOfCod.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("SonOfCod.Models.MenuInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MenuInfo");
                 });
 
             modelBuilder.Entity("SonOfCod.Models.User", b =>

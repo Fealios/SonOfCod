@@ -123,6 +123,18 @@ namespace SonOfCod.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SonOfCod.Models.MenuInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MenuInfo");
+                });
+
             modelBuilder.Entity("SonOfCod.Models.User", b =>
                 {
                     b.Property<string>("Id");

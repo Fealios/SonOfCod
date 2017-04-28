@@ -3,3 +3,14 @@
 }
 
 <h1> Home Page </h1>
+
+@*<img id="menu" src="ViewBag.MenuUrl" />*@
+
+<img id="menu" src="http://j2k.repo.nypl.org/adore-djatoka/resolver?url_ver=Z39.88-2004&rft_id=urn:uuid:ae2f51ec-bd49-66c6-e040-e00a18066cf3&svc_id=info:lanl-repo/svc/getRegion&svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&svc.format=image/jpeg&svc.scale=1800,0&svc.rotate=0" />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Edit", "FrontEdit", "Home")
+    </p>
+}

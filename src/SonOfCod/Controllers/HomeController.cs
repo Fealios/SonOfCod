@@ -17,6 +17,7 @@ namespace SonOfCod.Controllers
 
         public IActionResult Index()
         {
+            //ViewBag.MenuUrl = _db.MenuUrl;
             return View();
         }
 
@@ -71,6 +72,39 @@ namespace SonOfCod.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Admin()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.UserList = _db.Users.ToList();
+                return View();
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+
+        public IActionResult FrontEdit()
+        {
+            MenuInfo thisMenu = _db.MenuInfo.FirstOrDefault(menuinfo => menuinfo.Id == 0);
+            return View(thisMenu);
+        }
+
+        public IActionResult Newsletter()
+        {
+            ViewBag.MailList = _db.Mailusers.ToList();
+            return View();
+        }
+
+        public IActionResult RegisterMail(MailViewModel model)
+        {
+            var mailUser = new Mailuser { email = model.Email };
+            _db.Mailusers.Add(mailUser);
+
+            return View("Index");
         }
 
     }
