@@ -206,6 +206,10 @@ c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Startup.cs
 c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Controllers\HomeController.cs
 c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Migrations\20170428154109_Initial.cs
 c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Migrations\20170428154109_Initial.Designer.cs
+c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Migrations\20170428162506_ModelChange.cs
+c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Migrations\20170428162506_ModelChange.Designer.cs
 c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Migrations\SonOfCodDbContextModelSnapshot.cs
+c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Models\LoginViewModel.cs
 c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Models\SonOfCodDbContext.cs
 c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Models\User.cs
+c:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\ViewModels\RegisterViewModel.cs

@@ -1,0 +1,14 @@
+﻿@using SonOfCod.ViewModels
+
+@model LoginViewModel
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.UserName)
+    @Html.TextBoxFor(m => m.UserName)
+
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)
+
+    <input type="submit" value="Log in" class="btn btn-default" />
+}
