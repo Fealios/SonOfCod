@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using SonOfCod.Models;
 using SonOfCod.ViewModels;
 using Microsoft.AspNetCore.Identity;
-
+ 
 namespace SonOfCod.Controllers
 {
     public class HomeController : Controller
@@ -22,6 +22,7 @@ namespace SonOfCod.Controllers
                 var baseInfo = new MenuInfo();
                 _db.MenuInfo.Add(baseInfo);
             }
+            ViewBag.FrontPageInfo = _db.MenuInfo.FirstOrDefault();
             return View();
         }
 
