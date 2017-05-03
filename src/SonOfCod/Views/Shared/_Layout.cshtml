@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", null)</li>
+                    <li>@Html.ActionLink("Menu", "Index", "Home", null)</li>
                     
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -21,10 +21,10 @@
                     }
                     else
                     {
-                        <li>@Html.ActionLink("News Letter","NewLetter", "Home")</li>
                         <li>@Html.ActionLink("Register", "Register", "Home")</li>
                         <li>@Html.ActionLink("Login", "Login", "Home")</li>
                     }
+                        <li>@Html.ActionLink("News Letter","NewsLetter", "Home")</li>
 
 
                 </ul>

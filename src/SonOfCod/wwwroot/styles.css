@@ -1,8 +1,39 @@
-﻿.navbar {
-    background-image: url("images/imgs.png") !important;
+﻿@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
+.navbar {
+    background-image: url("images/imgs.png");
     height: 60px;
+    color: #d6cc94;
+    font-size: 2vh;
 }
 
 body {
     background-color: #F0ECD6;
+    overflow-x: hidden;
+}
+
+#menu-holder {
+    width: 100vw;
+}
+
+li {
+    list-style-type: none;
+}
+
+#title {
+    /*font-family: 'Lobster', cursive;*/
+    font-family: 'Kaushan Script', cursive;
+    font-size: 6vh;
+    margin-bottom: 2vh;
+}
+
+img {
+    margin-left: 10vw;
+    width: 80vw;
+    border-radius: 3px;
+}
+
+.form-control{
+    width: 20vw;
 }

@@ -2,11 +2,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1> Home Page </h1>
+<h1 id="title"> Welcome to our SeaFood Restaurant's Web Page! </h1>
 
-<img id="menu" src="@ViewBag.FrontPageInfo.Url" />
-
-<img id="menu" src="http://j2k.repo.nypl.org/adore-djatoka/resolver?url_ver=Z39.88-2004&rft_id=urn:uuid:ae2f51ec-bd49-66c6-e040-e00a18066cf3&svc_id=info:lanl-repo/svc/getRegion&svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&svc.format=image/jpeg&svc.scale=1800,0&svc.rotate=0" />
+<div id="menu-holder">
+    <img id="menu" src="@ViewBag.FrontPageInfo.Url" />
+</div>
 
 @if (User.Identity.IsAuthenticated)
 {

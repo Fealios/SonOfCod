@@ -104,12 +104,14 @@ namespace SonOfCod.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult RegisterMail(MailViewModel model)
         {
-            var mailUser = new Mailuser { email = model.Email };
+            var mailUser = new Mailuser { email = model.Email, favorite = "clams" };
             _db.Mailusers.Add(mailUser);
+            _db.SaveChanges();
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
     }
