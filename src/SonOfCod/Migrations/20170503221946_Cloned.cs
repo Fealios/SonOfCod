@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace SonOfCod.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Cloned : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,6 +35,20 @@ namespace SonOfCod.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MailingList",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    email = table.Column<string>(nullable: true),
+                    favorite = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MailingList", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -219,6 +233,9 @@ namespace SonOfCod.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "MailingList");
 
             migrationBuilder.DropTable(
                 name: "MenuInfo");

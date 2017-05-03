@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using SonOfCod.Models;
 using SonOfCod.ViewModels;
 using Microsoft.AspNetCore.Identity;
- 
+using Microsoft.EntityFrameworkCore;
+
 namespace SonOfCod.Controllers
 {
     public class HomeController : Controller
@@ -92,12 +93,6 @@ namespace SonOfCod.Controllers
             }
         }
 
-        public IActionResult FrontEdit()
-        {
-            MenuInfo thisMenu = _db.MenuInfo.FirstOrDefault(menuinfo => menuinfo.Id == 0);
-            return View(thisMenu);
-        }
-
         public IActionResult Newsletter()
         {
             ViewBag.MailList = _db.Mailusers.ToList();
@@ -114,5 +109,18 @@ namespace SonOfCod.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Edit()
+        {
+            MenuInfo thisMenu = _db.MenuInfo.FirstOrDefault(menuinfo => menuinfo.Id == 1);
+            return View(thisMenu);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(MenuInfo currentMenu)
+        {
+            _db.Entry(currentMenu).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -8,8 +8,8 @@ using SonOfCod.Models;
 namespace SonOfCod.Migrations
 {
     [DbContext(typeof(SonOfCodDbContext))]
-    [Migration("20170428185851_Initial")]
-    partial class Initial
+    [Migration("20170503221946_Cloned")]
+    partial class Cloned
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,6 +122,20 @@ namespace SonOfCod.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("SonOfCod.Models.Mailuser", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("email");
+
+                    b.Property<string>("favorite");
+
+                    b.HasKey("id");
+
+                    b.ToTable("MailingList");
                 });
 
             modelBuilder.Entity("SonOfCod.Models.MenuInfo", b =>

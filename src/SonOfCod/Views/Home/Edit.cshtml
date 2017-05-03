@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model SonOfCod.Models.MenuInfo
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        <label>Change the menu:</label>
+        @Html.TextBoxFor(model => model.Url, new { @class = "form-control" })
+
+        <input type="submit" class="btn btn-primary" value="Save" />
+    </div>
+}
